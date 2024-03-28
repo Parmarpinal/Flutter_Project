@@ -1,22 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import './CartDemo.dart';
 
 class pista extends StatefulWidget {
-//   String name;
-//   String path;
-//   int calory;
-//   int energy;
-//   int calcium;
-//   int sugar;
-//
-//   pista({
-//     required this.name,
-//     required this.path,
-//     required this.calory,
-//     required this.energy,
-//     required this.calcium,
-//     required this.sugar
-// })
   dynamic data;
   pista({required this.data});
 
@@ -25,15 +11,15 @@ class pista extends StatefulWidget {
 }
 
 class _pistaState extends State<pista> {
-  int count = 0;
-  String selectedSize = '';
-  int total = 0;
+  int count = 1;
+  String selectedSize = 'M';
+  late double total=0.0;
 
-  // void updateSelectedSize(String newSize) {
-  //   setState(() {
-  //     selectedSize = newSize;
-  //   });
-  // }
+  @override
+  void initState() {
+    super.initState();
+    total = widget.data.price * count;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +32,9 @@ class _pistaState extends State<pista> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  margin: EdgeInsets.all(20),
+                  width: 40,
+                  height: 40,
+                  margin: EdgeInsets.only(left: 20),
                   decoration: BoxDecoration(
                       color: Colors.pink,
                       borderRadius: BorderRadius.circular(10)),
@@ -61,7 +49,9 @@ class _pistaState extends State<pista> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.all(20),
+                  width: 40,
+                  height: 40,
+                  margin: EdgeInsets.only(right: 20),
                   decoration: BoxDecoration(
                       color: Colors.pink,
                       borderRadius: BorderRadius.circular(10)),
@@ -75,7 +65,7 @@ class _pistaState extends State<pista> {
                 ),
               ],
             ),
-            flex: 2,
+            flex: 1,
           ),
           Expanded(
             child: Row(
@@ -85,11 +75,12 @@ class _pistaState extends State<pista> {
                 ),
                 Text(
                   "${widget.data.name}\nIce Cream",
-                  style: TextStyle(
-                    color: Color(0xFFfa64ac),
-                    fontSize: MediaQuery.of(context).size.height * 0.04,
-                    fontFamily: "Lucida Handwriting",
-                    fontWeight: FontWeight.w900,
+                  style: GoogleFonts.allura(
+                      textStyle: TextStyle(
+                        color: Color(0xfffc7dba),
+                        fontWeight: FontWeight.w900,
+                        fontSize: MediaQuery.of(context).size.height * 0.05,
+                      )
                   ),
                 )
               ],
@@ -244,7 +235,7 @@ class _pistaState extends State<pista> {
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Color(0xFFfa64ac),
+                      color: Color(0xfffc7dba),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     margin: EdgeInsets.only(top: 30),
@@ -281,7 +272,7 @@ class _pistaState extends State<pista> {
                                   decoration: BoxDecoration(
                                     color: (selectedSize == "S")
                                         ? Colors.pink
-                                        : Color(0xFFfa64ac),
+                                        : Color(0xfffc7dba),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Center(
@@ -312,7 +303,7 @@ class _pistaState extends State<pista> {
                                   decoration: BoxDecoration(
                                     color: (selectedSize == "M")
                                         ? Colors.pink
-                                        : Color(0xFFfa64ac),
+                                        : Color(0xfffc7dba),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Center(
@@ -343,7 +334,7 @@ class _pistaState extends State<pista> {
                                   decoration: BoxDecoration(
                                     color: (selectedSize == "L")
                                         ? Colors.pink
-                                        : Color(0xFFfa64ac),
+                                        : Color(0xfffc7dba),
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Center(
@@ -360,73 +351,6 @@ class _pistaState extends State<pista> {
                                   ),
                                 ),
                               ),
-                              // TextButton(onPressed: (){}, child: Text("s"),style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.indigo)),),
-                              // TextButton(
-                              //   child: Text(
-                              //     "S",
-                              //     style: TextStyle(
-                              //         color: Colors.white,
-                              //         fontSize:
-                              //             MediaQuery.of(context).size.height *
-                              //                 0.03,
-                              //         fontWeight: FontWeight.w600),
-                              //   ),
-                              //   onPressed: () => updateSelectedSize('S'),
-                              //   style: ButtonStyle(
-                              //     backgroundColor: selectedSize == 'S'
-                              //         ? MaterialStateProperty.all(Colors.pink)
-                              //         : null,
-                              //   ),
-                              // ),
-                              // TextButton(
-                              //   child: Text(
-                              //     "M",
-                              //     style: TextStyle(
-                              //         color: Colors.white,
-                              //         fontSize:
-                              //             MediaQuery.of(context).size.height *
-                              //                 0.03,
-                              //         fontWeight: FontWeight.w600),
-                              //   ),
-                              //   onPressed: () => updateSelectedSize('M'),
-                              //   style: ButtonStyle(
-                              //     backgroundColor: selectedSize == 'M'
-                              //         ? MaterialStateProperty.all(Colors.pink)
-                              //         : null,
-                              //   ),
-                              // ),
-                              // TextButton(
-                              //   child: Text(
-                              //     "L",
-                              //     style: TextStyle(
-                              //         color: Colors.white,
-                              //         fontSize:
-                              //             MediaQuery.of(context).size.height *
-                              //                 0.03,
-                              //         fontWeight: FontWeight.w600),
-                              //   ),
-                              //   onPressed: () => updateSelectedSize('L'),
-                              //   style: ButtonStyle(
-                              //     backgroundColor: selectedSize == 'L'
-                              //         ? MaterialStateProperty.all(Colors.pink)
-                              //         : null,
-                              //   ),
-                              // ),
-                              // "M",
-                              // style: TextStyle(
-                              //     color: Colors.white,
-                              //     fontSize: MediaQuery.of(context).size.height*0.03,
-                              //     fontWeight: FontWeight.w600),
-
-                              // Container(
-                              //     child: Text(
-                              //   "L",
-                              //   style: TextStyle(
-                              //       color: Colors.white,
-                              //       fontSize:
-                              //           MediaQuery.of(context).size.height * 0.03,
-                              //       fontWeight: FontWeight.w600),
-                              // )),
                             ],
                           ),
                           flex: 2,
@@ -461,11 +385,15 @@ class _pistaState extends State<pista> {
                                     InkWell(
                                       onTap: () {
                                         setState(() {
-                                          count--;
-                                          if (count <= 0) {
-                                            count = 1;
-                                          }
-                                          total = widget.data.price * count;
+                                          // count--;
+                                          // if (count <= 0) {
+                                          //   setState(() {
+                                          //     count=1;
+                                          //   });
+                                          //   total = widget.data.price * count;
+                                          //   print(total);
+                                          // }
+                                          _updateCount(count-1);
                                         });
                                       },
                                       child: Text(
@@ -490,22 +418,25 @@ class _pistaState extends State<pista> {
                                           fontWeight: FontWeight.w700),
                                     ),
                                     InkWell(
-                                        child: Text(
-                                          "+",
-                                          style: TextStyle(
-                                              color: Color(0xfff40d30),
-                                              fontSize: MediaQuery.of(context)
-                                                      .size
-                                                      .height *
-                                                  0.03,
-                                              fontWeight: FontWeight.w700),
-                                        ),
                                         onTap: () {
                                           setState(() {
-                                            count++;
-                                            total = widget.data.price * count;
+                                            // count++;
+                                            // total = widget.data.price * count;
+                                            // print(total);
+                                            _updateCount(count+1);
                                           });
-                                        }),
+                                        },
+                                      child: Text(
+                                        "+",
+                                        style: TextStyle(
+                                            color: Color(0xfff40d30),
+                                            fontSize: MediaQuery.of(context)
+                                                .size
+                                                .height *
+                                                0.03,
+                                            fontWeight: FontWeight.w700),
+                                      ),
+                                    ),
                                   ],
                                 ),
                               )
@@ -538,7 +469,7 @@ class _pistaState extends State<pista> {
                           fontWeight: FontWeight.w600),
                     ),
                     Text(
-                      "\$${total.toString()}",
+                      "\$$total",
                       style: TextStyle(
                           color: Colors.pink,
                           fontSize: MediaQuery.of(context).size.height * 0.04,
@@ -582,5 +513,15 @@ class _pistaState extends State<pista> {
         ],
       ),
     );
+  }
+
+  void _updateCount(int newCount) {
+    setState(() {
+      count = newCount;
+      if(count<=0){
+        count=1;
+      }
+      total = widget.data.price * count;
+    });
   }
 }

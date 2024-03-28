@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import './pistaicecream.dart';
 
 class ListItem {
@@ -43,7 +44,7 @@ class home extends StatefulWidget {
 class _homeState extends State<home> {
   List<ListItem> items = [
     ListItem(
-        path: "images/icecream/cup1.png",
+        path: "assets/images/icecream/cup1.png",
         name: "Chocolate",
         price: 60,
         fontcol: Colors.brown.shade800,
@@ -54,7 +55,7 @@ class _homeState extends State<home> {
         energy: 1200,
         sugar: 0),
     ListItem(
-        path: "images/icecream/cup3.png",
+        path: "assets/images/icecream/cup3.png",
         name: "Pistachio",
         bgcol: Colors.green.shade300,
         fontcol: Colors.green.shade900,
@@ -65,7 +66,7 @@ class _homeState extends State<home> {
         energy: 1400,
         sugar: 3),
     ListItem(
-        path: "images/icecream/icecreamcup2.png",
+        path: "assets/images/icecream/icecreamcup2.png",
         name: "Strawberry",
         bgcol: Colors.pink.shade200,
         fontcol: Colors.pink.shade700,
@@ -78,12 +79,12 @@ class _homeState extends State<home> {
   ];
 
   List<ListBox> boxes = [
-    ListBox(name: "Cup", path: "images/icecream/cupicon.png"),
-    ListBox(name: "Candy", path: "images/icecream/candyicon.png"),
-    ListBox(name: "Cone", path: "images/icecream/coneicon.png"),
-    ListBox(name: "Chocolate", path: "images/icecream/chocolateicon.png"),
-    ListBox(name: "Shake", path: "images/icecream/shakeicon.png"),
-    ListBox(name: "Softy", path: "images/icecream/softyicon.png")
+    ListBox(name: "Cup", path: "assets/images/icecream/cupicon.png"),
+    ListBox(name: "Candy", path: "assets/images/icecream/candyicon.png"),
+    ListBox(name: "Cone", path: "assets/images/icecream/coneicon.png"),
+    ListBox(name: "Chocolate", path: "assets/images/icecream/chocolateicon.png"),
+    ListBox(name: "Shake", path: "assets/images/icecream/shakeicon.png"),
+    ListBox(name: "Softy", path: "assets/images/icecream/softyicon.png")
   ];
 
   String selectedIcon = 'Cup';
@@ -103,7 +104,7 @@ class _homeState extends State<home> {
                       width: MediaQuery.of(context).size.width - 60,
                       height: MediaQuery.of(context).size.height - 100,
                       decoration: BoxDecoration(
-                          color: Color(0xFFfa64ac),
+                          color: Color(0xfffc7dba),
                           borderRadius: BorderRadius.only(
                               bottomRight: Radius.circular(40))),
                     ),
@@ -116,6 +117,8 @@ class _homeState extends State<home> {
                         Row(
                           children: [
                             Container(
+                              width: 40,
+                              height: 40,
                               margin: EdgeInsets.only(left: 30),
                               decoration: BoxDecoration(boxShadow: [
                                 BoxShadow(blurRadius: 10, color: Colors.pink)
@@ -137,6 +140,8 @@ class _homeState extends State<home> {
                               ),
                             ),
                             Container(
+                              width: 40,
+                              height: 40,
                               margin: EdgeInsets.only(right: 30),
                               decoration: BoxDecoration(boxShadow: [
                                 BoxShadow(color: Colors.pink, blurRadius: 10)
@@ -181,11 +186,12 @@ class _homeState extends State<home> {
                                 ),
                                 Text(
                                   "yummm",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 70,
-                                    fontWeight: FontWeight.w700,
-                                    fontFamily: "French Script MT",
+                                  style: GoogleFonts.allura(
+                                      textStyle: TextStyle(
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 80,
+                                      )
                                   ),
                                 ),
                               ],
@@ -200,9 +206,7 @@ class _homeState extends State<home> {
                               width: MediaQuery.of(context).size.width * 0.6,
                               height: MediaQuery.of(context).size.height * 0.20,
                               child: Image.asset(
-                                "images/icecream/icecup1.png",
-                                // width: MediaQuery.of(context).size.width*0.6,
-                                // height: MediaQuery.of(context).size.height*0.2,
+                                "assets/images/icecream/icecup1.png",
                               ),
                             ),
                             SizedBox(
@@ -314,12 +318,6 @@ class _homeState extends State<home> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => pista(
-                                      // name: items[index].name,
-                                      // path: items[index].path,
-                                      // calcium: items[index].calcium,
-                                      // calory: items[index].calory,
-                                      // energy: items[index].energy,
-                                      // sugar: items[index].sugar,
                                       data: items[index],
                                     ),
                                   ));
@@ -410,10 +408,6 @@ class _homeState extends State<home> {
                                           ),
                                           flex: 4,
                                         ),
-                                        // Image.asset(items[index].path,
-                                        //     width: 80,
-                                        //     height: 80,
-                                        //     fit: BoxFit.fill),
                                         CircleAvatar(
                                           // child: Image.asset(items[index].path),
                                           backgroundImage:

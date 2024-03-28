@@ -33,38 +33,38 @@ class _homeNewState extends State<homeNew> {
     ListItem(
       name: 'Chocolate',
       desc: 'Rolled Ice Cream',
-      img: "images/icecream/cup1.png",
+      img: "assets/images/icecream/cup1.png",
       price: 80,
     ),
     ListItem(
         name: 'MANGO',
         desc: 'Rolled Ice Cream',
-        img: "images/icecream/cup2.png",
+        img: "assets/images/icecream/cup2.png",
         price: 65.50),
     ListItem(
         name: 'GUAVA',
         desc: 'Rolled Ice Cream',
-        img: "images/icecream/cup3.png",
+        img: "assets/images/icecream/cup3.png",
         price: 40.60),
     ListItem(
         name: 'Butterscoch',
         desc: 'Rolled Ice Cream',
-        img: "images/icecream/cup4.webp",
+        img: "assets/images/icecream/cup4.webp",
         price: 85.50),
     ListItem(
         name: 'Strawberry',
         desc: 'Rolled Ice Cream',
-        img: "images/icecream/icecup1.png",
+        img: "assets/images/icecream/icecup1.png",
         price: 100),
   ];
 
   List<ListBox> boxes = [
-    ListBox(name: "Cup", path: "images/icecream/cupicon.png"),
-    ListBox(name: "Candy", path: "images/icecream/candyicon.png"),
-    ListBox(name: "Cone", path: "images/icecream/coneicon.png"),
-    ListBox(name: "Chocolate", path: "images/icecream/chocolateicon.png"),
-    ListBox(name: "Shake", path: "images/icecream/shakeicon.png"),
-    ListBox(name: "Softy", path: "images/icecream/softyicon.png")
+    ListBox(name: "Cup", path: "assets/images/icecream/cupicon.png"),
+    ListBox(name: "Candy", path: "assets/images/icecream/candyicon.png"),
+    ListBox(name: "Cone", path: "assets/images/icecream/coneicon.png"),
+    ListBox(name: "Chocolate", path: "assets/images/icecream/chocolateicon.png"),
+    ListBox(name: "Shake", path: "assets/images/icecream/shakeicon.png"),
+    ListBox(name: "Softy", path: "assets/images/icecream/softyicon.png")
   ];
   String activatedIcon = 'Cup';
 
@@ -81,7 +81,7 @@ class _homeNewState extends State<homeNew> {
                     bottomRight: Radius.circular(30),
                     bottomLeft: Radius.circular(30))),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
@@ -156,7 +156,7 @@ class _homeNewState extends State<homeNew> {
                             decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(7)),
-                            child: Image.asset("images/icecream/person.png",
+                            child: Image.asset("assets/images/icecream/person.png",
                                 fit: BoxFit.cover),
                             // child: ClipRRect(child: Image.asset("images/icecream/person1.jpg",fit: BoxFit.cover,)),
                           )
@@ -172,7 +172,7 @@ class _homeNewState extends State<homeNew> {
                     spacing: -10,
                     children: [
                       Text(
-                        "Hello Roee, Choose Your",
+                        "Hello Rose, Choose Your",
                         style: TextStyle(
                             color: Colors.white,
                             fontSize:
@@ -190,7 +190,7 @@ class _homeNewState extends State<homeNew> {
                 )
               ],
             ),
-          )),
+          ),),
           Expanded(
             flex: 3,
             child: Container(
@@ -224,7 +224,7 @@ class _homeNewState extends State<homeNew> {
                                   decoration: BoxDecoration(
                                       color:
                                           (activatedIcon == boxes[index].name)
-                                              ? Color(0xFFfa64ac)
+                                              ? Color(0xfffc7dba)
                                               : Colors.pink.shade100,
                                       borderRadius: BorderRadius.circular(10)),
                                 ),
@@ -278,7 +278,7 @@ class _homeNewState extends State<homeNew> {
                                       MediaQuery.of(context).size.width * 0.18,
                                   child: CircleAvatar(
                                     child: Image.asset(items[index].img),
-                                    backgroundColor: Color(0xFFfa64ac),
+                                    backgroundColor: Color(0xfffc7dba),
                                     radius: MediaQuery.of(context)
                                             .size
                                             .shortestSide *

@@ -9,7 +9,7 @@ class front extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (Scaffold(
-        backgroundColor: Color(0xFFfa64ac),
+        backgroundColor: Color(0xfffc7dba),
         body: Center(
           child: Column(
             children: [
@@ -43,7 +43,7 @@ class front extends StatelessWidget {
                 child: Transform.rotate(
                   angle: 120,
                   child: Image.asset(
-                    "images/icecream/icecreamcone.png",
+                    "assets/images/icecream/icecreamcone.png",
                     height: MediaQuery.of(context).size.height-330,
                     width: MediaQuery.of(context).size.width,
                   ),
