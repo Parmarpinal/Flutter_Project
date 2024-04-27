@@ -62,7 +62,8 @@ class _homeNewState extends State<homeNew> {
     ListBox(name: "Cup", path: "assets/images/icecream/cupicon.png"),
     ListBox(name: "Candy", path: "assets/images/icecream/candyicon.png"),
     ListBox(name: "Cone", path: "assets/images/icecream/coneicon.png"),
-    ListBox(name: "Chocolate", path: "assets/images/icecream/chocolateicon.png"),
+    ListBox(
+        name: "Chocolate", path: "assets/images/icecream/chocolateicon.png"),
     ListBox(name: "Shake", path: "assets/images/icecream/shakeicon.png"),
     ListBox(name: "Softy", path: "assets/images/icecream/softyicon.png")
   ];
@@ -74,123 +75,130 @@ class _homeNewState extends State<homeNew> {
       body: Column(
         children: [
           Expanded(
-              child: Container(
-            decoration: BoxDecoration(
-                color: Colors.pink,
-                borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(30),
-                    bottomLeft: Radius.circular(30))),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 10, right: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          IconButton(
-                              onPressed: () {
-                                Navigator.pop(context);
-                              },
-                              icon: Icon(
-                                Icons.menu,
-                                color: Colors.white,
-                                size: MediaQuery.of(context).size.height * 0.05,
-                              )),
-                          Container(
-                            width: MediaQuery.of(context).size.width * 0.3,
-                            height: MediaQuery.of(context).size.height * 0.05,
-                            child: TextField(
-                              cursorColor: Colors.white,
-                              cursorHeight:
-                                  MediaQuery.of(context).size.height * 0.035,
-                              cursorRadius: Radius.circular(10),
-                              decoration: InputDecoration(
-                                // contentPadding: EdgeInsets.only(bottom: 3),
-                                // contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                                prefixIcon: Container(
-                                  margin: EdgeInsets.fromLTRB(0, 4, 0, 4),
-                                  child: CircleAvatar(
-                                    child: Icon(
-                                      Icons.search,
-                                      color: Colors.pink,
-                                      size: 15,
+            child: Container(
+              decoration: BoxDecoration(
+                  color: Colors.pink,
+                  borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(30),
+                      bottomLeft: Radius.circular(30))),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 10, right: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            IconButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
+                                icon: Icon(
+                                  Icons.menu,
+                                  color: Colors.white,
+                                  size:
+                                      MediaQuery.of(context).size.height * 0.05,
+                                )),
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              child: TextField(
+                                cursorColor: Colors.white,
+                                cursorHeight:
+                                    MediaQuery.of(context).size.height * 0.035,
+                                cursorRadius: Radius.circular(10),
+                                decoration: InputDecoration(
+                                  // contentPadding: EdgeInsets.only(bottom: 3),
+                                  // contentPadding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                  prefixIcon: Container(
+                                    margin: EdgeInsets.fromLTRB(0, 4, 0, 4),
+                                    child: CircleAvatar(
+                                      child: Icon(
+                                        Icons.search,
+                                        color: Colors.pink,
+                                        size: 15,
+                                      ),
+                                      radius:
+                                          MediaQuery.of(context).size.height *
+                                              0.01,
+                                      backgroundColor: Colors.white,
+                                      // MediaQuery.of(context).size.width * 0.005,
                                     ),
-                                    radius: MediaQuery.of(context).size.height *
-                                        0.01,
-                                    backgroundColor: Colors.white,
-                                    // MediaQuery.of(context).size.width * 0.005,
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide:
+                                          BorderSide(color: Colors.white),
+                                      borderRadius: BorderRadius.circular(20)),
+                                  fillColor: Colors.pink.shade400,
+                                  filled: true,
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                    borderRadius: BorderRadius.circular(20),
                                   ),
                                 ),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.white),
-                                    borderRadius: BorderRadius.circular(20)),
-                                fillColor: Colors.pink.shade400,
-                                filled: true,
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Colors.white),
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
                               ),
-                            ),
-                          )
-                        ],
-                      ),
-                      Wrap(
-                        direction: Axis.horizontal,
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        children: [
-                          IconButton(
-                              onPressed: () {},
-                              icon: Icon(
-                                Icons.shopping_cart_outlined,
-                                color: Colors.white,
-                                size: MediaQuery.of(context).size.height * 0.05,
-                              )),
-                          Container(
-                            width: MediaQuery.of(context).size.height * 0.05,
-                            height: MediaQuery.of(context).size.height * 0.05,
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(7)),
-                            child: Image.asset("assets/images/icecream/person.png",
-                                fit: BoxFit.cover),
-                            // child: ClipRRect(child: Image.asset("images/icecream/person1.jpg",fit: BoxFit.cover,)),
-                          )
-                        ],
-                      )
-                    ],
+                            )
+                          ],
+                        ),
+                        Wrap(
+                          direction: Axis.horizontal,
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          children: [
+                            IconButton(
+                                onPressed: () {},
+                                icon: Icon(
+                                  Icons.shopping_cart_outlined,
+                                  color: Colors.white,
+                                  size:
+                                      MediaQuery.of(context).size.height * 0.05,
+                                )),
+                            Container(
+                              width: MediaQuery.of(context).size.height * 0.05,
+                              height: MediaQuery.of(context).size.height * 0.05,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(7)),
+                              child: Image.asset(
+                                  "assets/images/icecream/person.png",
+                                  fit: BoxFit.cover),
+                              // child: ClipRRect(child: Image.asset("images/icecream/person1.jpg",fit: BoxFit.cover,)),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Wrap(
-                    direction: Axis.vertical,
-                    spacing: -10,
-                    children: [
-                      Text(
-                        "Hello Rose, Choose Your",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize:
-                                MediaQuery.of(context).size.height * 0.02),
-                      ),
-                      Text(
-                        "Best Icecream",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: MediaQuery.of(context).size.height * 0.04,
-                            fontWeight: FontWeight.w600),
-                      )
-                    ],
-                  ),
-                )
-              ],
+                  Padding(
+                    padding: EdgeInsets.only(left: 20),
+                    child: Wrap(
+                      direction: Axis.vertical,
+                      spacing: -10,
+                      children: [
+                        Text(
+                          "Hello Rose, Choose Your",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize:
+                                  MediaQuery.of(context).size.height * 0.02),
+                        ),
+                        Text(
+                          "Best Icecream",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize:
+                                  MediaQuery.of(context).size.height * 0.04,
+                              fontWeight: FontWeight.w600),
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),),
+          ),
           Expanded(
             flex: 3,
             child: Container(

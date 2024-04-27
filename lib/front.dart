@@ -20,21 +20,19 @@ class front extends StatelessWidget {
                 "Ice Cream",
                 style: GoogleFonts.allura(
                     textStyle: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w900,
-                      fontSize: MediaQuery.of(context).size.height*0.08,
-                    )
-                ),
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900,
+                  fontSize: MediaQuery.of(context).size.height * 0.08,
+                )),
               ),
               Text(
                 "Shop",
                 style: GoogleFonts.allura(
                     textStyle: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w900,
-                      fontSize: MediaQuery.of(context).size.height*0.08,
-                    )
-                ),
+                  color: Colors.white,
+                  fontWeight: FontWeight.w900,
+                  fontSize: MediaQuery.of(context).size.height * 0.08,
+                )),
               ),
               SizedBox(
                 height: 50,
@@ -44,7 +42,7 @@ class front extends StatelessWidget {
                   angle: 120,
                   child: Image.asset(
                     "assets/images/icecream/icecreamcone.png",
-                    height: MediaQuery.of(context).size.height-330,
+                    height: MediaQuery.of(context).size.height - 330,
                     width: MediaQuery.of(context).size.width,
                   ),
                 ),
@@ -59,7 +57,9 @@ class front extends StatelessWidget {
                   children: [
                     Text(
                       "Explore",
-                      style: TextStyle(color: Colors.white, fontSize: MediaQuery.of(context).size.height*0.03),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: MediaQuery.of(context).size.height * 0.03),
                     ),
                     SizedBox(
                       width: 20,

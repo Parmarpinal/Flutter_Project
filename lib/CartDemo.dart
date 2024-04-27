@@ -246,7 +246,8 @@ class _CartState extends State<Cart> {
                                     padding: EdgeInsets.fromLTRB(15, 7, 0, 0),
                                     decoration: BoxDecoration(
                                         color: Colors.pink.shade50,
-                                        borderRadius: BorderRadius.circular(10)),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
                                     child: Text(
                                       items[index].quantity.toString(),
                                       style: TextStyle(

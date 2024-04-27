@@ -4,6 +4,7 @@ import './CartDemo.dart';
 
 class pista extends StatefulWidget {
   dynamic data;
+
   pista({required this.data});
 
   @override
@@ -13,7 +14,7 @@ class pista extends StatefulWidget {
 class _pistaState extends State<pista> {
   int count = 1;
   String selectedSize = 'M';
-  late double total=0.0;
+  late double total = 0.0;
 
   @override
   void initState() {
@@ -77,11 +78,10 @@ class _pistaState extends State<pista> {
                   "${widget.data.name}\nIce Cream",
                   style: GoogleFonts.allura(
                       textStyle: TextStyle(
-                        color: Color(0xfffc7dba),
-                        fontWeight: FontWeight.w900,
-                        fontSize: MediaQuery.of(context).size.height * 0.05,
-                      )
-                  ),
+                    color: Color(0xfffc7dba),
+                    fontWeight: FontWeight.w900,
+                    fontSize: MediaQuery.of(context).size.height * 0.05,
+                  )),
                 )
               ],
             ),
@@ -393,7 +393,7 @@ class _pistaState extends State<pista> {
                                           //   total = widget.data.price * count;
                                           //   print(total);
                                           // }
-                                          _updateCount(count-1);
+                                          _updateCount(count - 1);
                                         });
                                       },
                                       child: Text(
@@ -418,21 +418,21 @@ class _pistaState extends State<pista> {
                                           fontWeight: FontWeight.w700),
                                     ),
                                     InkWell(
-                                        onTap: () {
-                                          setState(() {
-                                            // count++;
-                                            // total = widget.data.price * count;
-                                            // print(total);
-                                            _updateCount(count+1);
-                                          });
-                                        },
+                                      onTap: () {
+                                        setState(() {
+                                          // count++;
+                                          // total = widget.data.price * count;
+                                          // print(total);
+                                          _updateCount(count + 1);
+                                        });
+                                      },
                                       child: Text(
                                         "+",
                                         style: TextStyle(
                                             color: Color(0xfff40d30),
                                             fontSize: MediaQuery.of(context)
-                                                .size
-                                                .height *
+                                                    .size
+                                                    .height *
                                                 0.03,
                                             fontWeight: FontWeight.w700),
                                       ),
@@ -518,8 +518,8 @@ class _pistaState extends State<pista> {
   void _updateCount(int newCount) {
     setState(() {
       count = newCount;
-      if(count<=0){
-        count=1;
+      if (count <= 0) {
+        count = 1;
       }
       total = widget.data.price * count;
     });

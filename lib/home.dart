@@ -82,7 +82,8 @@ class _homeState extends State<home> {
     ListBox(name: "Cup", path: "assets/images/icecream/cupicon.png"),
     ListBox(name: "Candy", path: "assets/images/icecream/candyicon.png"),
     ListBox(name: "Cone", path: "assets/images/icecream/coneicon.png"),
-    ListBox(name: "Chocolate", path: "assets/images/icecream/chocolateicon.png"),
+    ListBox(
+        name: "Chocolate", path: "assets/images/icecream/chocolateicon.png"),
     ListBox(name: "Shake", path: "assets/images/icecream/shakeicon.png"),
     ListBox(name: "Softy", path: "assets/images/icecream/softyicon.png")
   ];
@@ -188,11 +189,10 @@ class _homeState extends State<home> {
                                   "yummm",
                                   style: GoogleFonts.allura(
                                       textStyle: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w900,
-                                        fontSize: 80,
-                                      )
-                                  ),
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w900,
+                                    fontSize: 80,
+                                  )),
                                 ),
                               ],
                             ),
